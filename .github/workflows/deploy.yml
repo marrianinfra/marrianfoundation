@@ -18,7 +18,7 @@ jobs:
           script: |
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-            cd /root/websites/marrianinfrawebsite
+            cd /root/websites/marrianfoundation
             git pull origin main
             npm install
             npm run build
