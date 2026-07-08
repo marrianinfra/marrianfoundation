@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-surface: #ffffff;
+  --color-surface-muted: #f8f9fa;
+  --color-navy: #0a192f;
+  --color-navy-light: #1e3a8a;
+  --color-orange: #ff6b35;
+  --color-orange-dark: #ea580c;
+  --color-gold: #d4af37;
+  --color-gold-dark: #ca8a04;
+  --color-muted: #64748b;
+  --font-display: var(--font-playfair);
+  --font-heading: var(--font-jakarta);
+  --font-body: var(--font-inter);
+  --text-fluid-sm: clamp(0.875rem, 0.8rem + 0.25vw, 1rem);
+  --text-fluid-base: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);
+  --text-fluid-lg: clamp(1.125rem, 1rem + 0.5vw, 1.35rem);
+  --text-fluid-xl: clamp(1.35rem, 1.1rem + 1vw, 1.75rem);
+  --text-fluid-2xl: clamp(1.75rem, 1.3rem + 1.5vw, 2.5rem);
+  --text-fluid-3xl: clamp(2.25rem, 1.5rem + 2.5vw, 3.5rem);
+  --text-fluid-4xl: clamp(2.75rem, 1.8rem + 3.5vw, 4.5rem);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-surface);
+    color: var(--color-navy);
+    font-family: var(--font-body), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-orange) 25%, transparent);
+    color: var(--color-navy);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+  }
+
+  .font-heading {
+    font-family: var(--font-heading), system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: var(--font-body), system-ui, sans-serif;
+  }
+
+  .section-padding {
+    @apply px-5 py-20 sm:px-8 md:px-12 lg:px-16 lg:py-28;
+  }
+
+  .container-site {
+    @apply mx-auto w-full max-w-7xl;
+  }
+
+  .reveal-line {
+    @apply overflow-hidden;
+  }
+
+  .grid-placeholder {
+    background-image:
+      linear-gradient(to right, rgb(10 25 47 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(10 25 47 / 0.04) 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .timeline-gradient {
+    background: linear-gradient(
+      180deg,
+      var(--color-gold) 0%,
+      var(--color-orange) 55%,
+      var(--color-gold-dark) 100%
+    );
+  }
+
+  .csr-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgb(10 25 47 / 0.04) 1px, transparent 0);
+    background-size: 32px 32px;
+  }
+
+  .glass-card {
+    @apply rounded-2xl border border-neutral-200/80 bg-surface/80 shadow-sm backdrop-blur-md;
+  }
+}
